@@ -1,6 +1,6 @@
-echo -e "for centos system"
+echo -e "--------------------------------for centos system--------------------------------"
 
-echo -e "start romove old docker component ..."
+echo -e "--------------------------------start romove old docker component ...--------------------------------"
 
 sudo yum remove -y docker \
                   docker-client \
@@ -13,11 +13,11 @@ sudo yum remove -y docker \
                   docker-engine-selinux \
                   docker-engine
                   
-echo -e "update yum-utils"
+echo -e "--------------------------------update yum-utils--------------------------------"
                   
 sudo yum install -y yum-utils
 
-echo -e "replace yum source to aliyun"
+echo -e "--------------------------------replace yum source to aliyun--------------------------------"
 
 sudo yum-config-manager -y \
     --add-repo \
@@ -25,11 +25,11 @@ sudo yum-config-manager -y \
     
 sudo sed -i 's/download.docker.com/mirrors.aliyun.com\/docker-ce/g' /etc/yum.repos.d/docker-ce.repo
 
-echo -e "start install docker-ce"
+echo -e "--------------------------------start install docker-ce--------------------------------"
 
 sudo yum install -y docker-ce docker-ce-cli containerd.io
 
-echo -e "start docekr auto background"
+echo -e "--------------------------------start docekr auto background--------------------------------"
 
 sudo systemctl enable docker
 sudo systemctl start docker
