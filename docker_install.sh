@@ -33,8 +33,8 @@ echo -e "--------------------------------start docekr auto background-----------
 
 sudo systemctl enable docker
 sudo systemctl start docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
 
 echo -e "test docker"
 docker run --rm hello-world
