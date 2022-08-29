@@ -19,7 +19,7 @@ sudo yum install -y yum-utils
 
 echo -e "replace yum source to aliyun"
 
-sudo yum-config-manager \
+sudo yum-config-manager -y \
     --add-repo \
     https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     
@@ -27,7 +27,7 @@ sudo sed -i 's/download.docker.com/mirrors.aliyun.com\/docker-ce/g' /etc/yum.rep
 
 echo -e "start install docker-ce"
 
-sudo yum install docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io
 
 echo -e "start docekr auto background"
 
