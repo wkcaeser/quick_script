@@ -23,11 +23,11 @@ sudo yum-config-manager -y \
     --add-repo \
     https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     
-sudo sed -i 's/download.docker.com/mirrors.aliyun.com\/docker-ce/g' /etc/yum.repos.d/docker-ce.repo
+sudo sed -i 's/download.docker.com/mirrors.aliyun.com\/docker-ce/g' /etc/yum.repos.d/docker-ce.repo 
 
 echo -e "--------------------------------start install docker-ce--------------------------------"
 
-sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 echo -e "--------------------------------start docekr auto background--------------------------------"
 
